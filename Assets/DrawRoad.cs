@@ -35,7 +35,7 @@ public class DrawRoad : MonoBehaviour {
         SpriteRenderer spriteRenderer = msprite.GetComponent<SpriteRenderer>();
         GameObject mAgent = Instantiate(Agent);
         Transform agentTranform = mAgent.GetComponent<Transform>();
-        agentTranform.SetPositionAndRotation(new Vector3(a.x, b.y), new Quaternion());
+        agentTranform.SetPositionAndRotation(new Vector3((a.x + b.x)/2, (a.y+b.y)/2), new Quaternion());
         float distance = Vector2.Distance(a, b);
         spriteRenderer.transform.localScale = new Vector3(width / (float)311, distance / (float)1640, 0);
         spriteRenderer.transform.position = new Vector3((a.x + b.x) / 2, (float)(a.y + b.y) / (float)2, 0);
@@ -49,6 +49,9 @@ public class DrawRoad : MonoBehaviour {
         SpriteRenderer spriteRenderer = msprite.GetComponent<SpriteRenderer>();
         msprite.transform.rotation = new Quaternion(0, 0, -90, 0);
         float distance = Vector2.Distance(a, b);
+        GameObject mAgent = Instantiate(Agent);
+        Transform agentTranform = mAgent.GetComponent<Transform>();
+        agentTranform.SetPositionAndRotation(new Vector3((a.x + b.x) / 2, (a.y + b.y) / 2), new Quaternion());
         spriteRenderer.transform.localScale = new Vector3(distance /(float)16.4  , width / (float)3.11, 0);
         spriteRenderer.transform.position = new Vector3((a.x + b.x) / 2, (float)(a.y + b.y) / (float)2, 0);
         renderLine1.RenderMyLine(new Vector3(a.x , a.y + width/2, 0), new Vector3(b.x, b.y + width/2, 0));

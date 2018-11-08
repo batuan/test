@@ -26,7 +26,6 @@ public class behavior : MonoBehaviour
 
         Vector2 agent2Position = new Vector2(0, 0);
         //agent2Position = agent2.Update();
-        Debug.Log("Agent 2 Position: " + agent2Position);
 
     }
 
